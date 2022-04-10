@@ -18,7 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/posts/create', [PostController::class, 'create'])
     ->middleware('auth')
     ->name('posts.create');
