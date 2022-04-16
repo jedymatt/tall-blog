@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts/create', [PostController::class, 'create'])
-    ->middleware('auth')
+//    ->middleware('auth')
     ->name('posts.create');
 
 Route::post('/posts', [PostController::class, 'store'])
