@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12">
         <div class="px-12">
-            <form action="{{ route('posts.create') }}" method="post">
+            <form action="{{ route('posts.store') }}" method="post">
                 @csrf
 
                 <label>
