@@ -26,7 +26,7 @@ Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create');
 
 Route::post('/posts', [PostController::class, 'store'])
-    ->middleware('auth')
+    // ->middleware('auth')
     ->name('posts.store');
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])
