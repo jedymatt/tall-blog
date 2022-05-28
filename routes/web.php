@@ -22,7 +22,7 @@ Route::get('/posts', [PostController::class, 'index'])
     ->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])
-//    ->middleware('auth')
+    //    ->middleware('auth')
     ->name('posts.create');
 
 Route::post('/posts', [PostController::class, 'store'])
@@ -31,3 +31,6 @@ Route::post('/posts', [PostController::class, 'store'])
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])
     ->name('posts.show');
+
+
+require __DIR__ . '/auth.php';
