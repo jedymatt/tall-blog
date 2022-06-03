@@ -1,43 +1,44 @@
 <x-app-layout>
-    <div class="py-6">
-        <div class="flex justify-center">
-            <form method="POST">
-                @csrf
-                <div class="flex flex-col">
-                    <label for="name" class="text-sm text-gray-600">Name</label>
-                    <input id="name" type="text" class="border border-gray-400 p-2 w-full" name="name"
-                        value="{{ old('name') }}" required autofocus>
-                    @error('name')
-                        <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
-                    @enderror
+    <div class="lg:py-6 lg:px-4 px-2 py-3">
+
+            <div class="relative flex justify-center">
+                <div>
+                    <div class="bg-gray-50 px-4 py-6 rounded-md drop-shadow-lg">
+                        <form action="{{ route('register')}}" method="POST">
+                            @csrf
+                            <label class="text-sm">
+                                Name
+                                <input type="text" name="name" value="{{ old('name') }}" class="mt-1 w-full rounded-md  focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                            </label>
+
+                            <div class="mt-4">
+                                <label class="text-sm">
+                                    Email
+                                    <input type="text" name="email" value="{{ old('email') }}" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                </label>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-sm">
+                                    Password
+                                    <input type="password" name="password" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                </label>
+                            </div>
+                            <div class="mt-4">
+                                <label class="text-sm">
+                                    Confirm Password
+                                    <input type="password" name="password_confirmation" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                </label>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-1 flex items-center hover:bg-blue-700 focus:ring ring-blue-800 shadow-lg shadow-blue-700/50 font-medium">
+                                    Register
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="flex flex-col">
-                    <label for="email" class="text-sm text-gray-600">Email</label>
-                    <input id="email" type="email" class="border border-gray-400 p-2 w-full" name="email"
-                        value="{{ old('email') }}" required>
-                    @error('email')
-                        <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="flex flex-col">
-                    <label for="password" class="text-sm text-gray-600">Password</label>
-                    <input id="password" type="password" class="border border-gray-400 p-2 w-full" name="password"
-                        required>
-                    @error('password')
-                        <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="flex flex-col">
-                    <label for="password-confirm" class="text-sm text-gray-600">Confirm Password</label>
-                    <input id="password-confirm" type="password" class="border border-gray-400 p-2 w-full"
-                        name="password_confirmation" required>
-                </div>
-                <div class="flex flex-col">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Register
-                    </button>
-                </div>
-            </form>
+
         </div>
     </div>
 </x-app-layout>
