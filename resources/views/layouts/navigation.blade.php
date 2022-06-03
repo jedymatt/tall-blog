@@ -1,20 +1,20 @@
-<nav class="py-3 px-4 shadow-md sticky top-0 backdrop-blur-sm flex flex-wrap items-center">
+<nav class="py-3 px-4 shadow-md backdrop-blur-sm">
+    <div class=" flex flex-wrap items-center">
+        <a href="/" class="text-xl font-bold">{{ config('app.name') }}</a>
 
-    <a href="/" class="text-xl font-bold">{{ config('app.name') }}</a>
-
-    <div class="ml-auto">
-        @guest
+        <div class="ml-auto">
+            @guest
             <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900">Login</a>
             <a href="{{ route('register') }}" class="text-sm text-gray-600 hover:text-gray-900">Register</a>
-        @endguest
-        @auth
-            <a href="{{ route('logout') }}" class="text-sm text-gray-600 hover:text-gray-900"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            @endguest
+            @auth
+            <a href="{{ route('logout') }}" class="text-sm text-gray-600 hover:text-gray-900" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Logout
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-        @endauth
+            @endauth
+        </div>
     </div>
 </nav>
