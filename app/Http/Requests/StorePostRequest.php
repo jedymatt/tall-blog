@@ -25,8 +25,7 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|unique:posts',
-            'slug' => 'required|string|unique:posts',
+            'title' => 'required|string',
             'content' => 'required|string'
         ];
     }
