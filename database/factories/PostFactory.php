@@ -22,7 +22,7 @@ class PostFactory extends Factory
         return [
             'title' => Str::title($title),
             'slug' => Str::slug($title),
-            'content' => $this->faker->paragraphs(asText: true),
+            'body' => $this->faker->paragraphs(asText: true),
             'user_id' => \App\Models\User::factory()->create()->id,
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];

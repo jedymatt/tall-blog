@@ -8,9 +8,9 @@ class PostService
 {
     public function create(array $data)
     {
-        $post =  Post::create([
+        $post = Post::create([
             'title' => $data['title'],
-            'content' => $data['content'],
+            'body' => $data['body'],
             'user_id' => auth()->id(),
         ]);
 
@@ -31,5 +31,35 @@ class PostService
         }
 
         return $slug;
+    }
+
+    public function update(Post $post, array $data)
+    {
+        $post->update([
+            'title' => $data['title'],
+            'body' => $data['body'],
+        ]);
+
+        $post->slug = $this->generateSlug($post->id, $post->title);
+        $post->save();
+
+        return $post;
+    }
+
+    public function delete(Post $post)
+    {
+        $post->delete();
+    }
+
+    public function isAuthor(Post $post)
+    {
+        return $post->user_id === auth()->id();
+    }
+
+    public function publish(Post $post)
+    {
+        $post->update([
+            'published_at' => now(),
+        ]);
     }
 }

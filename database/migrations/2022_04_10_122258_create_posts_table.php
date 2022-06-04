@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique()->nullable();
-            $table->text('content');
+            $table->text('body');
             $table->foreignId('user_id')->constrained();
             $table->timestamp('published_at')->nullable();
             $table->softDeletes();
