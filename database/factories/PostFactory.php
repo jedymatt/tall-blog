@@ -23,6 +23,8 @@ class PostFactory extends Factory
             'title' => Str::title($title),
             'slug' => Str::slug($title),
             'content' => $this->faker->paragraphs(asText: true),
+            'user_id' => \App\Models\User::factory()->create()->id,
+            'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }
