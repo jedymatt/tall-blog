@@ -13,7 +13,7 @@ class WrittenPostController extends Controller
 
     public function create()
     {
-        return view('user.write-post'); // TODO: Write a view
+        return view('user.write-post');
     }
 
     public function store(WritePostRequest $request, PostService $postService)
