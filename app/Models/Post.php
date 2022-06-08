@@ -13,8 +13,9 @@ class Post extends Model
     protected $fillable = [
         'title',
         'slug',
-        'content',
+        'body',
         'user_id',
+        'published_at',
     ];
 
     protected $casts = [
@@ -29,12 +30,6 @@ class Post extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
-    }
-
-    public function publish(): void
-    {
-        $this->published_at = now();
-        $this->save();
     }
 
     public function isPublished(): bool
