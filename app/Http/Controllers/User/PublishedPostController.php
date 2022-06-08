@@ -9,8 +9,16 @@ use App\Services\PostService;
 
 class PublishedPostController extends Controller
 {
-    public function store(Post $post, PostService $postService) {
+    public function store(Post $post, PostService $postService)
+    {
         $postService->publish($post);
+
+        return redirect()->route('user-posts.index');
+    }
+
+    public function destroy(Post $post, PostService $postService)
+    {
+        $postService->unpublish($post);
 
         return redirect()->route('user-posts.index');
     }
