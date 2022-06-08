@@ -38,10 +38,8 @@ class PostService
         $post->update([
             'title' => $data['title'],
             'body' => $data['body'],
+            'slug' => $this->generateSlug($post->id, $data['title']),
         ]);
-
-        $post->slug = $this->generateSlug($post->id, $post->title);
-        $post->save();
 
         return $post;
     }
@@ -60,6 +58,13 @@ class PostService
     {
         $post->update([
             'published_at' => now(),
+        ]);
+    }
+
+    public function unpublish(Post $post)
+    {
+        $post->update([
+            'published_at' => null,
         ]);
     }
 }
