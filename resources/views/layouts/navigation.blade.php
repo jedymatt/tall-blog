@@ -1,7 +1,11 @@
 <nav class="py-3 px-4 shadow-md backdrop-blur-sm">
     <div class=" flex flex-wrap items-center">
         <a href="/" class="text-xl font-bold">{{ config('app.name') }}</a>
-
+        <div class="ml-4">
+            @auth
+            <a href="{{ route('home') }}">Home</a>
+            @endauth
+        </div>
         <div class="ml-auto">
             @guest
             <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900">Login</a>
