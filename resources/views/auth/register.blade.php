@@ -30,9 +30,9 @@
                                 </label>
                             </div>
                             <div class="mt-4 flex justify-end">
-                                <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-1 flex items-center hover:bg-blue-700 focus:ring ring-blue-800 shadow-lg shadow-blue-700/50 font-medium">
+                                <x-btn.primary type="submit">
                                     Register
-                                </button>
+                                </x-btn.primary>
 
                             </div>
                         </form>
