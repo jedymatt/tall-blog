@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.2 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -817,6 +817,9 @@ select {
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -849,6 +852,12 @@ select {
 }
 .max-w-6xl {
   max-width: 72rem;
+}
+.resize-y {
+  resize: vertical;
+}
+.resize {
+  resize: both;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1090,6 +1099,10 @@ select {
 .placeholder\:text-gray-400::placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.first\:mt-0:first-child {
+  margin-top: 0px;
 }
 
 .hover\:cursor-pointer:hover {
