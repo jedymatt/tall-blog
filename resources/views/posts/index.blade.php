@@ -2,17 +2,15 @@
     <div class="py-12">
         <div class="px-6">
             @foreach ($posts as $post)
-                <div class="m-4">
-                    <div class="border rounded-md shadow-sm p-4">
-                        <h2 class="text-xl font-medium">{{ $post->title }}</h2>
-                        <p class="indent-5 mt-1">
-                            {{ $post->content }}
-                        </p>
-                        <div class="mt-1">
-                            <a href="{{ route('posts.show', $post) }}" class="hover:cursor-pointer">Read more...</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="first:mt-0 mt-4 p-6 rounded-md border shadow-sm hover:cursor-pointer">
+                <h1 class="hover:text-blue-800">
+                    <a href="{{ route('posts.show', $post) }}">
+                        {{ $post->title }}
+                    </a>
+                </h1>
+                <p>Authored by: {{ $post->user->name }}</p>
+                <p>{{ $post->created_at->format('M d, Y') }}</p>
+            </div>
             @endforeach
             <div class="m-4">
                 {{ $posts->links() }}

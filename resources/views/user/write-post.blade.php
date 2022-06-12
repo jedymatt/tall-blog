@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="px-4 py-6">
-        <form method="POST" action="{{ route('home.write-post') }}">
+        <form method="POST" action="{{ route('write-post') }}">
             @csrf
             <div class="flex  items-center justify-between">
                 <h1>Write a Post</h1>
