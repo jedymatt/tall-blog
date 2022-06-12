@@ -11,6 +11,19 @@ use App\Services\PostService;
 class WrittenPostController extends Controller
 {
 
+    public function index()
+    {
+        $posts = auth()->user()->posts;
+
+        return view('user.my-posts', compact('posts'));
+    }
+
+    public function show(Post $post)
+    {
+        return view('user.post', compact('post'));
+    }
+
+
     public function create()
     {
         return view('user.write-post');
@@ -20,6 +33,6 @@ class WrittenPostController extends Controller
     {
         $postService->create($request->validated());
 
-        return redirect()->route('user.home');
+        return redirect()->route('home');
     }
 }
