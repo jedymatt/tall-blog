@@ -43,8 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function posts(): HasMany
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function publishedPosts(): HasMany
+    {
+        return $this->posts()->whereNotNull('published_at');
     }
 }
