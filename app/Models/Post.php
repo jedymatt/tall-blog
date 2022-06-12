@@ -19,7 +19,9 @@ class Post extends Model
     ];
 
     protected $casts = [
-        'published_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'published_at' => 'datetime:M d, Y',
     ];
 
     public function user()
