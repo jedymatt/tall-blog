@@ -9,11 +9,11 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <div>
+                                <label for="email">{{ __('E-Mail Address') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div>
+                                    <input id="email" type="email" class="border-gray-400 rounded-md focus:border-indigo-500  focus:ring-indigo-500 focus:ring-1" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -23,11 +23,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <div>
+                                <label for="password">{{ __('Password') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div class="">
+                                    <input id="password" type="password" class="border-gray-400 rounded-md focus:border-indigo-500  focus:ring-indigo-500 focus:ring-1" name="password" required autocomplete="current-password">
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -37,22 +37,22 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember
-                                    " {{ old('remember') ? 'checked' : '' }}>
-                                    </div>
+                            <div>
+                                <div>
+                                    <label>
+                                        <input class="rounded-md" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        Remember Me
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                            <div>
+                                <div>
+                                    <x-btn.primary type="submit">
                                         {{ __('Login') }}
-                                    </button>
+                                    </x-btn.primary>
 
                                     @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                     @endif
