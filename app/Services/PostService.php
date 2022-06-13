@@ -38,10 +38,16 @@ class PostService
         $post->update([
             'title' => $data['title'],
             'body' => $data['body'],
-            'slug' => $this->generateSlug($post->id, $data['title']),
         ]);
 
         return $post;
+    }
+
+    public function updateSlug(Post $post)
+    {
+        $post->update([
+            'slug' => $this->generateSlug($post->id, $post->title),
+        ]);
     }
 
     public function delete(Post $post)
