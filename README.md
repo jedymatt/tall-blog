@@ -6,7 +6,7 @@
 
 ## Run Locally
 
-Clone the repository and go to {application directory} directory
+Clone the repository and then go to tall-blog directory by running these commands:
 ```shell
 git clone https://github.com/jedymatt/tall-blog.git
 
