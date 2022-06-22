@@ -30,7 +30,8 @@ class PostFactory extends Factory
 
     public function drafted()
     {
-        return $this->state('drafted', function () {
+        return $this->state(function ($attributes) {
+            dd($attributes);
             return [
                 'published_at' => null,
             ];
