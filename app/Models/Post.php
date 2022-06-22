@@ -43,4 +43,14 @@ class Post extends Model
     {
         return $this->published_at === null;
     }
+
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('published_at');
+    }
+
+    public function scopeDrafted($query)
+    {
+        return $query->whereNull('published_at');
+    }
 }
