@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $posts = Post::published()->latest()->paginate();
-
-    return view('home', compact('posts'));
-})
+Route::get('/', [HomeController::class, 'show'])
     ->name('home');
 
 Route::get('/posts', [PostController::class, 'index'])
