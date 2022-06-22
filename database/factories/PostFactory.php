@@ -27,4 +27,13 @@ class PostFactory extends Factory
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
+
+    public function drafted()
+    {
+        return $this->state('drafted', function () {
+            return [
+                'published_at' => null,
+            ];
+        });
+    }
 }
