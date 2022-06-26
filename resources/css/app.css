@@ -28,3 +28,13 @@
     }
 
 }
+
+@layer components {
+    .form-input {
+        @apply rounded-md focus:ring focus:ring-indigo-200/50 border-indigo-200
+    }
+
+    .form-btn {
+        @apply bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md
+    }
+}
