@@ -1,44 +1,53 @@
 <x-app-layout>
-    <div class="lg:py-6 lg:px-4 px-2 py-3">
+    <div class="py-12 px-4">
+        <div class="flex flex-col justify-center items-center">
+            <div class="w-full max-w-md rounded-md shadow-md p-4 bg-white">
+                @if ($errors->any())
+                    <div>
+                        <div class="font-medium text-red-600">
+                            {{ __('Whoops! Something went wrong.') }}
+                        </div>
 
-            <div class="relative flex justify-center">
-                <div>
-                    <div class="bg-gray-50 px-4 py-6 rounded-md drop-shadow-lg">
-                        <form action="{{ route('register')}}" method="POST">
-                            @csrf
-                            <label class="text-sm">
-                                Name
-                                <input type="text" name="name" value="{{ old('name') }}" class="mt-1 w-full rounded-md  focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
-                            </label>
-
-                            <div class="mt-4">
-                                <label class="text-sm">
-                                    Email
-                                    <input type="text" name="email" value="{{ old('email') }}" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
-                                </label>
-                            </div>
-                            <div class="mt-4">
-                                <label class="text-sm">
-                                    Password
-                                    <input type="password" name="password" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
-                                </label>
-                            </div>
-                            <div class="mt-4">
-                                <label class="text-sm">
-                                    Confirm Password
-                                    <input type="password" name="password_confirmation" class="mt-1 w-full rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
-                                </label>
-                            </div>
-                            <div class="mt-4 flex justify-end">
-                                <x-btn.primary type="submit">
-                                    Register
-                                </x-btn.primary>
-
-                            </div>
-                        </form>
+                        <ul class="mt-3 list-disc list-inside text-sm text-red-600">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                </div>
+                @endif
+                <form action="{{ route('register') }}" method="POST">
+                    @csrf
+                    <label>
+                        Name
+                        <input class="mt-1 w-full form-input" type="text" name="name" :value="old('name')" required
+                            autofocus />
+                    </label>
+                    <div class="mt-4">
+                        <label>
+                            Email
+                            <input class="mt-1 w-full form-input" type="email" name="email" :value="old('email')"
+                                required />
+                        </label>
+                    </div>
 
+                    <div class="mt-4">
+                        <label>
+                            Password
+                            <input class="mt-1 w-full form-input" type="password" name="password" required />
+                        </label>
+                    </div>
+                    <div class="mt-4">
+                        <label>
+                            Confirm Password
+                            <input class="mt-1 w-full form-input" type="password" name="password_confirmation"
+                                required />
+                        </label>
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <button class="form-btn" type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </x-app-layout>
