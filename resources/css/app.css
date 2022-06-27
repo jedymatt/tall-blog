@@ -2,39 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    h1 {
-        @apply text-3xl font-bold
-    }
-
-    h2 {
-        @apply text-2xl font-bold
-    }
-
-    h3 {
-        @apply text-xl font-bold
-    }
-
-    h4 {
-        @apply text-lg font-bold
-    }
-
-    h5 {
-        @apply text-sm font-bold
-    }
-
-    h6 {
-        @apply text-xs font-bold
-    }
-
-}
-
 @layer components {
     .form-input {
         @apply rounded-md focus:ring focus:ring-indigo-200/50 border-gray-200 w-full
     }
 
     .form-btn {
-        @apply bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md
+        @apply bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md text-sm
+        focus:ring focus:ring-indigo-200/50
     }
 }
