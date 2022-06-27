@@ -1,6 +1,6 @@
 @props(['post'])
 
-<div class="p-4 border rounded-md shadom-sm hover:shadow-md max-w-2xl">
+<div class="p-4 border rounded-md w-full max-w-2xl transition-transform hover:-translate-y-1 hover:shadow-sm">
     <a href="{{ route('posts.show', $post) }}">
         <h2 class="text-3xl hover:text-indigo-700">{{ $post->title }}</h2>
     </a>

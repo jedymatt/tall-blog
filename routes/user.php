@@ -13,4 +13,10 @@ Route::middleware('auth')->group(function () {
         ->name('write-post');
 
     Route::post('/write-post', [WrittenPostController::class, 'store']);
+
+    Route::get('/user/profile', function () {
+        $user = auth()->user();
+
+        return view('user.profile', compact('user'));
+    })->name('user.profile');
 });
