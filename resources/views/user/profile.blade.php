@@ -1,49 +1,39 @@
 <x-app-layout>
-    <div class="py-12 px-4">
+    <div class="py-12 sm:px-4">
         <div class="flex justify-center">
             <div class="max-w-3xl w-full flex flex-col gap-4">
-                <div class="rounded-md border p-4 bg-white shadow-sm">
-                    <div class="grid grid-cols-3 grid-flow-row gap-4">
-                        <div class="">
+                <div>
+                    <div class="grid sm:grid-cols-3 grid-flow-row gap-4">
+                        <div class="px-4 sm:pt-4 font-semibold">
                             Personal Information
                         </div>
-                        <div class="col-span-2 flex flex-col gap-4">
-                            <label>
-                                <span class="text-sm font-semibold">Name</span>
-                                <input class="form-input" type="text" value="{{ $user->name }}">
-                            </label>
+                        <div class="col-span-2 shadow p-4 bg-white sm:rounded-md">
+                            <div class="flex flex-col gap-4">
+                                <label>
+                                    Name
+                                    <input class="form-input" type="text" value="{{ $user->name }}">
+                                </label>
 
-                            <label>
-                                <span class="text-sm font-semibold">Email</span>
-                                <input class="form-input" type="email" value="{{ $user->email }}">
-                            </label>
+                                <label>
+                                    Email
+                                    <input class="form-input" type="email" value="{{ $user->email }}">
+                                </label>
+                            </div>
+                            <div class="mt-4 flex justify-end w-full">
+                                <button class="form-btn">Save</button>
+                            </div>
                         </div>
-                        <div class="col-span-3 flex justify-end w-full">
-                            <button class="form-btn">Save</button>
-                        </div>
+
                     </div>
 
-                    <div class="border-t mt-4 pt-4 grid grid-cols-3 grid-flow-row gap-4">
-                        <div class="">
-                            Security
+                    <div class="border-t mt-4 pt-4 grid sm:grid-cols-3 grid-flow-row gap-4">
+                        <div class="px-4 sm:pt-4 font-semibold">
+                            Password
                         </div>
-                        <div class="col-span-2 flex flex-col gap-2">
-                            <div>
-                                <label>
-                                    <span class="text-sm font-semibold">Current Password</span>
-                                    <input class="form-input" type="password" placeholder="Current Password">
-                                </label>
-                            </div>
-                            <div class="mt-4">
-                                <label>
-                                    <span class="text-sm font-semibold">New Password</span>
-                                    <input class="form-input" type="password" placeholder="New Password">
-                                </label>
-                            </div>
+                        <div class="col-span-2">
+                            @livewire('user.profile.update-password')
                         </div>
-                        <div class="col-span-3 flex justify-end w-full">
-                            <button class="form-btn">Update Password</button>
-                        </div>
+
                     </div>
 
                 </div>
