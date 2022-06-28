@@ -1,4 +1,4 @@
-<nav class="py-3 px-4 shadow-md backdrop-blur-sm">
+<nav class="sticky border-b top-0 py-2 px-4 shadow-sm backdrop-blur-sm">
     <div class=" flex flex-row items-center">
         <a href="/" class="text-xl font-bold">{{ config('app.name') }}</a>
         <div class="ml-auto inline-flex flex-row items-center">
@@ -25,7 +25,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <div x-show="show" x-transition.scale.origin.top
+                    <div x-show="show" x-transition.scale.origin.top.right
                         class="absolute mt-2 right-0 py-1 bg-white shadow-md rounded-md w-48 text-gray-700 text-sm"
                         style="display: none;">
 
