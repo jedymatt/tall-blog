@@ -17,13 +17,14 @@
             @auth
                 <div x-data="{ show: false }" class="relative">
                     <div x-on:click="show=!show" x-on:click.outside="show=false" x-on:close.stop="show=false"
-                        class="relative w-6 h-6 overflow-hidden hover:cursor-pointer bg-gray-100 rounded-full dark:bg-gray-600"
-                        :class="show ? 'ring-1' : ''">
-                        <svg class="absolute w-8 h-8 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                clip-rule="evenodd"></path>
-                        </svg>
+                        class="relative w-6 h-6 overflow-hidden hover:cursor-pointer bg-gray-100 rounded-full dark:bg-gray-600">
+                        <button class="inline-flex w-8 h-8">
+                            <svg class="absolute w-8 h-8 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
                     </div>
                     <div x-show="show" x-transition.scale.origin.top.right
                         class="absolute mt-2 right-0 py-1 bg-white shadow-md rounded-md w-48 text-gray-700 text-sm"
