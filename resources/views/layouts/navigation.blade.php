@@ -5,15 +5,19 @@
             @auth
                 @if (!request()->routeIs('write-post'))
                     <a role="button" href="{{ route('write-post') }}"
-                        class="mr-2 p-2 text-sm text-indigo-500 bg-white border border-indigo-500 rounded-md hover:bg-indigo-500 hover:text-white focus:bg-indigo-800 focus:text-white">
+                        class="mr-2 px-4 py-1.5 text-sm text-indigo-500 bg-white border border-indigo-500 rounded-md hover:bg-indigo-500 hover:text-white focus:bg-indigo-800 focus:text-white">
                         Write Post
                     </a>
                 @endif
             @endauth
             @guest
-                <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900">Login</a>
-                <a href="{{ route('register') }}" class="text-sm text-gray-600 hover:text-gray-900">Register</a>
+                <a href="{{ route('login') }}"
+                    class="transition text-sm text-gray-600 hover:bg-indigo-500 focus:bg-indigo-500 py-1.5 px-3 rounded-md hover:text-white">Login</a>
+                <a href="{{ route('register') }}"
+                    class="transition text-sm text-gray-600 hover:bg-indigo-500 focus:bg-indigo-500 py-1.5 px-3 rounded-md hover:text-white">Register</a>
             @endguest
+
+            {{-- Dropdown --}}
             @auth
                 <div x-data="{ show: false }" class="relative">
                     <div x-on:click="show=!show" x-on:click.outside="show=false" x-on:close.stop="show=false"
@@ -30,10 +34,12 @@
                         class="absolute mt-2 right-0 py-1 bg-white shadow-md rounded-md w-48 text-gray-700 text-sm"
                         style="display: none;">
 
+                        {{-- Profile Link --}}
                         <a href="{{ route('user.profile') }}" class="block p-2 hover:bg-gray-100">
                             Profile
                         </a>
 
+                        {{-- Logout Link --}}
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <a href="{{ route('logout') }}"
