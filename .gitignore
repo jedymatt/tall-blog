@@ -15,5 +15,6 @@ yarn-error.log
 /.vscode
 
 # Laravel ide helper generated files
-_ide_helper*.php
 .phpstorm.meta.php
+_ide_helper.php
+_ide_helper_*.php
