@@ -14,7 +14,7 @@
 
                     <div class="border-t mt-4 pt-4 grid sm:grid-cols-3 grid-flow-row gap-4">
                         <div class="px-4 sm:pt-4 font-semibold">
-                            Password
+                            Update Password
                         </div>
                         <div class="col-span-2">
                             @livewire('user.profile.update-password')
