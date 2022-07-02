@@ -2,7 +2,7 @@
 
 <div class="p-4 border rounded-md w-full max-w-2xl transition hover:shadow-md">
     <a href="{{ route('posts.show', $post) }}">
-        <h2 class="text-3xl hover:text-indigo-700">{{ $post->title }}</h2>
+        <h2 class="text-3xl font-semibold hover:text-indigo-700">{{ $post->title }}</h2>
     </a>
     <div class="mt-4 text-gray-600 line-clamp-2">
         <a href="{{ route('posts.show', $post) }}">
@@ -25,7 +25,7 @@
                 <div>
                     <span class="text-sm italic text-gray-600">
                         Published at
-                        {{ $post->published_at > now()->subWeek() ? $post->published_at->diffForHumans() : $post->published_at->format('M d, Y') }}
+                        {{ $post->formattedPublishedAt() }}
                     </span>
                 </div>
             </div>
