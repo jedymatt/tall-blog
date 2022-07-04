@@ -1,14 +1,16 @@
 @props(['post'])
 
-<div class="p-4 border rounded-md w-full max-w-2xl transition hover:shadow-md">
-    <a href="{{ route('posts.show', $post) }}">
-        <h2 class="text-3xl font-semibold hover:text-indigo-700">{{ $post->title }}</h2>
-    </a>
-    <div class="mt-4 text-gray-600 line-clamp-2">
-        <a href="{{ route('posts.show', $post) }}">
-            {!! $post->body !!}
+<article class="p-4 border rounded-md w-full max-w-2xl transition hover:shadow-md">
+    <h1 class="text-4xl font-black hover:text-indigo-700">
+        <a href="{{ route('post.show', $post) }}">
+            {{ $post->title }}
         </a>
-    </div>
+    </h1>
+    <p class="mt-4 text-gray-600 line-clamp-2">
+        <a href="{{ route('post.show', $post) }}">
+            {{ $post->body }}
+        </a>
+    </p>
     <div class="mt-4">
         <div class="flex flex-row gap-2">
             <div class="self-center">
@@ -31,4 +33,4 @@
             </div>
         </div>
     </div>
-</div>
+</article>
