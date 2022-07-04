@@ -47,7 +47,7 @@
                             @csrf
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();this.closest('form').submit();"
-                                class="block p-2 hover:bg-gray-100">
+                                class="block p-2 hover:bg-gray-100 text-red-600">
                                 Logout
                             </a>
                         </form>
