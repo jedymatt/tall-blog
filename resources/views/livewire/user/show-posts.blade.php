@@ -3,7 +3,7 @@
     <div class="mt-4">
         <article>
             <h2 class="text-2xl font-bold">
-                <a href="{{ route('posts.show', $post) }}">
+                <a href="{{ route('post.show', $post) }}">
                     {{ $post->title }}
                 </a>
             </h2>
