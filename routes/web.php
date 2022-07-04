@@ -19,11 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
 
-Route::get('/posts', [PostController::class, 'index'])
-    ->name('posts.index');
-
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])
-    ->name('posts.show');
+Route::get('/posts/{post:slug}', function (Post $post) {
+    return view('post.show', compact('post'));
+})->name('post.show');
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/user.php';
