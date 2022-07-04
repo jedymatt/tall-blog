@@ -39,6 +39,9 @@
                             Profile
                         </a>
 
+                        {{-- My Posts Link --}}
+                        <a href="{{ route('my-posts') }}" class="block p-2 hover:bg-gray-100">My Posts</a>
+
                         {{-- Logout Link --}}
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
