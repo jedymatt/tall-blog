@@ -20,12 +20,11 @@ cp .env.example .env
 
 Then, configure the .env file according to your use case.
 
-Install the dependencies and then compile the assets
+Install the dependencies
 ```shell
 composer install
 
 npm install
-npm run dev
 ```
 
 Populate the tables and the data to the database
@@ -39,7 +38,17 @@ php artisan key:generate
 ```
 
 Run the application
+
+Start the server:
+
 ```shell
 php artisan serve
 ```
+
+Start vite server
+
+```shell
+npm run dev
+```
+
 Finally, visit http://localhost:8000 to view the site.
