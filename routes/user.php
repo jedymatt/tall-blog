@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\User\WrittenPostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\PreviewPostController;
-use App\Http\Requests\User\WritePostRequest;
 use App\Models\Post;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 
 Route::middleware('auth')->group(function () {
@@ -26,7 +24,9 @@ Route::middleware('auth')->group(function () {
     })->name('write-post');
 
     Route::post('/write-post', function (Request $request) {
-        $request->publish_post = $request->boolean('publish_post');
+        $request->merge([
+            'publish_post' => $request->boolean('publish_post'),
+        ]);
 
         $request->validate([
             'title' => 'required|string',
@@ -34,15 +34,20 @@ Route::middleware('auth')->group(function () {
             'publish_post' => 'nullable|boolean',
         ]);
 
-        Post::create([
+        $post = Post::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
             'body' => $request->body,
             'published_at' => $request->publish_post ? now() : null,
         ]);
 
-        return redirect()->route('my-posts');
+        $slug = PostService::generateSlug($post->id, $post->title);
 
+        $post->update([
+            'slug' => $slug,
+        ]);
+
+        return redirect()->route('my-posts');
     });
 
     Route::get('/user/profile', function () {
