@@ -26,10 +26,17 @@
             <textarea
                 class="mt-4 resize-y w-full text-3xl font-bold border-transparent focus:border-transparent focus:ring-transparent placeholder:text-gray-400"
                 name="title" placeholder="Title" rows="1"></textarea>
-
-            <textarea
-                class="mt-4 h-48 resize-y w-full border-transparent focus:border-transparent focus:ring-transparent placeholder:text-gray-400"
-                name="body" placeholder="Content here...">{{ old('body') }}</textarea>
+            <div class="mt-4">
+                <textarea style="display: none;" id="editor" name="body" placeholder="Content here...">{{ old('body') }}</textarea>
+            </div>
         </form>
     </div>
+
+    @push('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                initEasyMDE('editor');
+            });
+        </script>
+    @endpush
 </x-app-layout>
