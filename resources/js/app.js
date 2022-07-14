@@ -1,26 +1,19 @@
 import './bootstrap';
 
-import Alpine from 'alpinejs'
+import Alpine from 'alpinejs';
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
-Alpine.start()
+Alpine.start();
 
 import EasyMDE from 'easymde';
 
 window.EasyMDE = EasyMDE;
 
-window.initEasyMDE = (elementId) => {
-    const textArea = document.getElementById(elementId);
-
-    const easymde = new EasyMDE({
-        element: textArea,
-        spellChecker: false
+window.setAsEditor = (elementId) => {
+    return new EasyMDE({
+        element: document.getElementById(elementId),
+        spellChecker: false,
+        forceSync: true,
     });
-
-    easymde.codemirror.on('change', () => {
-        textArea.value = easymde.value();
-    });
-
-    return easymde;
-}
+};
