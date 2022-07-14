@@ -20,7 +20,7 @@ class PostService
         return $post;
     }
 
-    public function generateSlug($id, $title)
+    public static function generateSlug($id, $title)
     {
         $slug = str($title)->slug();
 
