@@ -8,7 +8,7 @@
                     <span class="block">Published at {{ $post->published_at->format('M d, Y') }}</span>
                 </p>
                 <p class="mt-4">
-                    {{ $post->body }}
+                    {!! Str::markdown($post->body) !!}
                 </p>
             </article>
         </div>
