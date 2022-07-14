@@ -27,7 +27,7 @@
                 class="mt-4 resize-y w-full text-3xl font-bold border-transparent focus:border-transparent focus:ring-transparent placeholder:text-gray-400"
                 name="title" placeholder="Title" rows="1"></textarea>
             <div class="mt-4">
-                <textarea style="display: none;" id="editor" name="body" placeholder="Content here...">{{ old('body') }}</textarea>
+                <textarea id="editor" name="body" style="display: none;" placeholder="Content here...">{{ old('body') }}</textarea>
             </div>
         </form>
     </div>
@@ -35,7 +35,7 @@
     @push('scripts')
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                initEasyMDE('editor');
+                setAsEditor('editor');
             });
         </script>
     @endpush
