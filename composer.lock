@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7be7c155e61d00b741d15c5a247cb06",
+    "content-hash": "dab33eb4d59a4171ca5602d2c76868dd",
     "packages": [
         {
             "name": "brick/math",
@@ -6048,22 +6048,21 @@
         },
         {
             "name": "jedymatt/laravel-sail-env",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jedymatt/laravel-sail-env.git",
-                "reference": "19050dd167fa8cf59001f6716190b92c0229cf6d"
+                "reference": "0ff0e48dd5cbce61d8aec24522f94dda90ce4aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jedymatt/laravel-sail-env/zipball/19050dd167fa8cf59001f6716190b92c0229cf6d",
-                "reference": "19050dd167fa8cf59001f6716190b92c0229cf6d",
+                "url": "https://api.github.com/repos/jedymatt/laravel-sail-env/zipball/0ff0e48dd5cbce61d8aec24522f94dda90ce4aac",
+                "reference": "0ff0e48dd5cbce61d8aec24522f94dda90ce4aac",
                 "shasum": ""
             },
             "require": {
                 "laravel/sail": "^1.0",
-                "php": "^7.3|^8.0",
-                "symfony/yaml": "^6.0"
+                "php": "^7.3|^8.0"
             },
             "require-dev": {
                 "laravel/pint": "^1.0"
@@ -6092,11 +6091,17 @@
                 }
             ],
             "description": "Configures .env file to match the sail environment variable's requirements.",
+            "keywords": [
+                "env",
+                "laravel",
+                "laravel-sail",
+                "sail"
+            ],
             "support": {
                 "issues": "https://github.com/jedymatt/laravel-sail-env/issues",
-                "source": "https://github.com/jedymatt/laravel-sail-env/tree/v1.0.1"
+                "source": "https://github.com/jedymatt/laravel-sail-env"
             },
-            "time": "2022-07-17T13:15:47+00:00"
+            "time": "2022-07-17T14:43:26+00:00"
         },
         {
             "name": "laravel/sail",
@@ -8443,80 +8448,6 @@
                 }
             ],
             "time": "2022-06-17T06:28:57+00:00"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v6.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "b01c4e7dc6a51cbf114567af04a19789fd1011fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/b01c4e7dc6a51cbf114567af04a19789fd1011fe",
-                "reference": "b01c4e7dc6a51cbf114567af04a19789fd1011fe",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1",
-                "symfony/polyfill-ctype": "^1.8"
-            },
-            "conflict": {
-                "symfony/console": "<5.4"
-            },
-            "require-dev": {
-                "symfony/console": "^5.4|^6.0"
-            },
-            "suggest": {
-                "symfony/console": "For validating YAML files using the lint command"
-            },
-            "bin": [
-                "Resources/bin/yaml-lint"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Loads and dumps YAML files",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.1.2"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-06-20T12:01:07+00:00"
         },
         {
             "name": "theseer/tokenizer",
