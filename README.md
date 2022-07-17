@@ -17,11 +17,6 @@ git clone https://github.com/jedymatt/tall-blog.git
 cd tall-blog
 ```
 
-Generate .env file
-```shell
-cp .env.example .env
-```
-
 Then, configure the .env file according to your use case.
 
 Install the dependencies
@@ -29,6 +24,13 @@ Install the dependencies
 composer install
 
 npm install
+```
+
+Generate .env file
+```shell
+cp .env.example .env
+# or this if you plan to use sail:
+php artisan env-sail
 ```
 
 Populate the tables and the data to the database
