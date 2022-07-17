@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8e801b482fa10a2c31d45f73dacfdf2",
+    "content-hash": "b7be7c155e61d00b741d15c5a247cb06",
     "packages": [
         {
             "name": "brick/math",
@@ -6047,25 +6047,22 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-            "name": "jedymatt/laravel-env-sail",
-            "version": "v1.0.2",
+            "name": "jedymatt/laravel-sail-env",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jedymatt/laravel-env-sail.git",
-                "reference": "c3cf1b627894ef9b0362fdc60b18177f948620c9"
+                "url": "https://github.com/jedymatt/laravel-sail-env.git",
+                "reference": "19050dd167fa8cf59001f6716190b92c0229cf6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jedymatt/laravel-env-sail/zipball/c3cf1b627894ef9b0362fdc60b18177f948620c9",
-                "reference": "c3cf1b627894ef9b0362fdc60b18177f948620c9",
+                "url": "https://api.github.com/repos/jedymatt/laravel-sail-env/zipball/19050dd167fa8cf59001f6716190b92c0229cf6d",
+                "reference": "19050dd167fa8cf59001f6716190b92c0229cf6d",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "^8.0|^9.0",
-                "illuminate/support": "^8.0|^9.0",
-                "illuminate/validation": "^8.0|^9.0",
                 "laravel/sail": "^1.0",
-                "php": "^8.0",
+                "php": "^7.3|^8.0",
                 "symfony/yaml": "^6.0"
             },
             "require-dev": {
@@ -6075,13 +6072,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Jedymatt\\LaravelEnvSail\\LaravelEnvSailServiceProvider"
+                        "Jedymatt\\LaravelSailEnv\\LaravelSailEnvServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Jedymatt\\LaravelEnvSail\\": "src/"
+                    "Jedymatt\\LaravelSailEnv\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6094,12 +6091,12 @@
                     "email": "jedymatt@gmail.com"
                 }
             ],
-            "description": "Configures .env file to match the sail environtment variable's requirements.",
+            "description": "Configures .env file to match the sail environment variable's requirements.",
             "support": {
-                "issues": "https://github.com/jedymatt/laravel-env-sail/issues",
-                "source": "https://github.com/jedymatt/laravel-env-sail/tree/v1.0.2"
+                "issues": "https://github.com/jedymatt/laravel-sail-env/issues",
+                "source": "https://github.com/jedymatt/laravel-sail-env/tree/v1.0.1"
             },
-            "time": "2022-07-17T10:31:32+00:00"
+            "time": "2022-07-17T13:15:47+00:00"
         },
         {
             "name": "laravel/sail",
