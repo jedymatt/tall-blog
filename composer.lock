@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2f361860801e761ba8ed79827c2f6f5",
+    "content-hash": "a8e801b482fa10a2c31d45f73dacfdf2",
     "packages": [
         {
             "name": "brick/math",
@@ -6048,16 +6048,16 @@
         },
         {
             "name": "jedymatt/laravel-env-sail",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jedymatt/laravel-env-sail.git",
-                "reference": "413fc6fc8b1165c35370f047cf6070ca445bb86e"
+                "reference": "c3cf1b627894ef9b0362fdc60b18177f948620c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jedymatt/laravel-env-sail/zipball/413fc6fc8b1165c35370f047cf6070ca445bb86e",
-                "reference": "413fc6fc8b1165c35370f047cf6070ca445bb86e",
+                "url": "https://api.github.com/repos/jedymatt/laravel-env-sail/zipball/c3cf1b627894ef9b0362fdc60b18177f948620c9",
+                "reference": "c3cf1b627894ef9b0362fdc60b18177f948620c9",
                 "shasum": ""
             },
             "require": {
@@ -6067,6 +6067,9 @@
                 "laravel/sail": "^1.0",
                 "php": "^8.0",
                 "symfony/yaml": "^6.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0"
             },
             "type": "library",
             "extra": {
@@ -6094,9 +6097,9 @@
             "description": "Configures .env file to match the sail environtment variable's requirements.",
             "support": {
                 "issues": "https://github.com/jedymatt/laravel-env-sail/issues",
-                "source": "https://github.com/jedymatt/laravel-env-sail/tree/v1.0.1"
+                "source": "https://github.com/jedymatt/laravel-env-sail/tree/v1.0.2"
             },
-            "time": "2022-07-17T09:05:20+00:00"
+            "time": "2022-07-17T10:31:32+00:00"
         },
         {
             "name": "laravel/sail",
