@@ -4,9 +4,9 @@
                         focus:ring focus:ring-indigo-200/50 inline-flex justify-center items-center">
         <span wire:loading.remove>
             @if ($post->isPublished())
-                Unpublish
+                {{ $buttonTextFallback }}
             @else
-                Publish
+                {{ $buttonText }}
             @endif
         </span>
         <span wire:loading>
