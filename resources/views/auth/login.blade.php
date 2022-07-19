@@ -30,7 +30,7 @@
                         </label>
                     </div>
                     <div class="mt-4 flex justify-end">
-                        <button class="form-btn" type="submit">Login</button>
+                        <x-button type="submit">Login</x-button>
                     </div>
                 </form>
             </div>

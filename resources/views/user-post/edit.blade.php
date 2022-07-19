@@ -16,10 +16,11 @@
                 <h1 class="text-3xl font-semibold">Write a Post</h1>
                 <div class="flex flex-row gap-4 items-baseline">
                     @if ($post->isDrafted())
-                        @livewire('toggle-publish-button', ['post' => $post, 'buttonText' => 'Publish Post', 'buttonTextFallback' => 'Unpublish Post'])
+                        @livewire('toggle-publish-button', ['post' => $post, 'buttonText' => 'Publish', 'buttonTextFallback' => 'Unpublish'])
                     @endif
-                    <button class="p-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-800 text-sm transition-colors"
-                        type="submit">Save</button>
+                    <x-button>
+                        Save Post
+                    </x-button>
                 </div>
             </div>
             <textarea

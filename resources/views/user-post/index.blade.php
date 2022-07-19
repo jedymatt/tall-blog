@@ -11,8 +11,7 @@
                         {{ $post->body }}
                     </p>
                     <div class="mt-4 flex flex-row gap-4 justify-end">
-                        <a href="{{ route('post.show', $post) }}"
-                            class="inline-flex gap-1 flex-row justify-center items-center text-indigo-500 rounded-md border border-indigo-500 py-1.5 px-3 hover:bg-indigo-700 hover:text-white text-sm  focus:ring focus:ring-indigo-200/50">
+                        <x-button outline href="{{ route('post.show', $post) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -21,20 +20,17 @@
                                     clip-rule="evenodd" />
                             </svg>
                             View
-                        </a>
+                        </x-button>
                         @livewire('toggle-publish-button', ['post' => $post])
-                        <a href="{{ route('my-posts.edit', $post) }}"
-                            class="inline-flex gap-1 flex-row justify-center items-center form-btn">
+                        <x-button href="{{ route('my-posts.edit', $post) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path
                                     d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                             </svg>
                             Edit
-                        </a>
-                        <button
-                            class="bg-red-500 hover:bg-red-700 text-white py-1.5 px-3 rounded-md text-sm
-                        focus:ring focus:ring-red-200/50 inline-flex items-center justify-center gap-1">
+                        </x-button>
+                        <x-button danger>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -42,7 +38,7 @@
                                     clip-rule="evenodd" />
                             </svg>
                             Delete
-                        </button>
+                        </x-button>
                     </div>
                 </article>
             @endforeach

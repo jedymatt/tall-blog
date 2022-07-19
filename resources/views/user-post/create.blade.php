@@ -14,11 +14,12 @@
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl font-semibold">Write a Post</h1>
                 <div class="flex flex-row gap-4 items-baseline">
-                    <button class="p-2 rounded-md bg-indigo-200 text-white text-sm" disabled>
-                        Publish Post
-                    </button>
-                    <button class="p-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-800 text-sm transition-colors"
-                        type="submit">Save</button>
+                    <x-button disabled>
+                        Publish
+                    </x-button>
+                    <x-button>
+                        Save Post
+                    </x-button>
                 </div>
             </div>
             <textarea

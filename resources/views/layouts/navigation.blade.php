@@ -4,10 +4,9 @@
         <div class="ml-auto inline-flex flex-row items-center">
             @auth
                 @if (!request()->routeIs('write-post'))
-                    <a role="button" href="{{ route('write-post') }}"
-                        class="mr-2 px-4 py-1.5 text-sm text-indigo-500 bg-white border border-indigo-500 rounded-md hover:bg-indigo-500 hover:text-white focus:bg-indigo-800 focus:text-white">
+                    <x-button outline class="mr-2" href="{{ route('write-post') }}">
                         Write Post
-                    </a>
+                    </x-button>
                 @endif
             @endauth
             @guest

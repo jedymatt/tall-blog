@@ -44,7 +44,7 @@
                         </label>
                     </div>
                     <div class="mt-4 flex justify-end">
-                        <button class="form-btn" type="submit">Register</button>
+                        <x-button type="submit">Register</x-button>
                     </div>
                 </form>
             </div>

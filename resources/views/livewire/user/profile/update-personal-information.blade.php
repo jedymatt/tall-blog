@@ -20,6 +20,6 @@
         @if (session('success'))
             {{ session('success') }}
         @endif
-        <button wire:click="update" class="form-btn">Save</button>
+        <x-button wire:click="update" class="form-btn">Save</x-button>
     </div>
 </div>

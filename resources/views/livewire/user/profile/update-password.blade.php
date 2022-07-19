@@ -29,6 +29,6 @@
         @if (session('message'))
             {{ session('message') }}
         @endif
-        <button wire:click="update" class="form-btn">Update Password</button>
+        <x-button wire:click="update">Update Password</x-button>
     </div>
 </div>
