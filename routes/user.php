@@ -7,7 +7,6 @@ use App\Services\PostService;
 use Illuminate\Http\Request;
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/my-posts', function () {
         $posts = Post::where('user_id', auth()->user()->id)
             ->latest()
@@ -24,21 +23,15 @@ Route::middleware('auth')->group(function () {
     })->name('write-post');
 
     Route::post('/write-post', function (Request $request) {
-        $request->merge([
-            'publish_post' => $request->boolean('publish_post'),
-        ]);
-
         $request->validate([
             'title' => 'required|string',
             'body' => 'required|string',
-            'publish_post' => 'nullable|boolean',
         ]);
 
         $post = Post::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
             'body' => $request->body,
-            'published_at' => $request->publish_post ? now() : null,
         ]);
 
         $slug = PostService::generateSlug($post->id, $post->title);
@@ -47,7 +40,27 @@ Route::middleware('auth')->group(function () {
             'slug' => $slug,
         ]);
 
-        return redirect()->route('my-posts');
+        return redirect()->route('my-posts.edit', $post);
+    });
+
+    Route::get('/my-posts/{post:slug}/edit', function (Post $post) {
+        return view('user-post.edit', compact('post'));
+    })->name('my-posts.edit');
+
+    Route::put('/my-posts/{post:slug}/edit', function (Request $request, Post $post) {
+        $request->validate([
+            'title' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        $slug = PostService::generateSlug($post->id, $post->title);
+
+        return redirect()->route('my-posts.edit', $post);
     });
 
     Route::get('/user/profile', function () {

@@ -23,14 +23,15 @@
                             View
                         </a>
                         @livewire('toggle-publish-button', ['post' => $post])
-                        <button class="inline-flex gap-1 flex-row justify-center items-center form-btn">
+                        <a href="{{ route('my-posts.edit', $post) }}"
+                            class="inline-flex gap-1 flex-row justify-center items-center form-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path
                                     d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                             </svg>
                             Edit
-                        </button>
+                        </a>
                         <button
                             class="bg-red-500 hover:bg-red-700 text-white py-1.5 px-3 rounded-md text-sm
                         focus:ring focus:ring-red-200/50 inline-flex items-center justify-center gap-1">

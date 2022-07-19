@@ -41,7 +41,7 @@ class Post extends Model
         return $this->published_at !== null;
     }
 
-    public function isDraft(): bool
+    public function isDrafted(): bool
     {
         return $this->published_at === null;
     }
