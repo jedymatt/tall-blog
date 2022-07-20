@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\PreviewPostController;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
