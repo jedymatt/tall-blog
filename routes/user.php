@@ -14,9 +14,6 @@ Route::middleware('auth')->group(function () {
         return view('user-post.index', compact('posts'));
     })->name('my-posts');
 
-    Route::get('/my-posts/{post:slug}/preview', [PreviewPostController::class, 'show'])
-        ->name('my-posts.preview');
-
     Route::get('/write-post', function () {
         return view('user-post.create');
     })->name('write-post');
