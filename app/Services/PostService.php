@@ -20,6 +20,20 @@ class PostService
         return $post;
     }
 
+    public function createDraft($title, $body)
+    {
+        $post = Post::create([
+            'title' => $title,
+            'body' => $body,
+            'user_id' => auth()->id(),
+        ]);
+
+        $post->slug = $this->generateSlug($post->id, $post->title);
+        $post->save();
+
+        return $post;
+    }
+
     public static function generateSlug($id, $title)
     {
         $slug = str($title)->slug();
