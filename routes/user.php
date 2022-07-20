@@ -1,22 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
-    Route::get('/my-posts', function () {
-        $posts = Post::where('user_id', auth()->user()->id)
-            ->latest()
-            ->paginate();
+    Route::get('/my-posts', [User\PostController::class, 'index'])
+        ->name('my-posts');
 
-        return view('user-post.index', compact('posts'));
-    })->name('my-posts');
-
-    Route::get('/write-post', function () {
-        return view('user-post.create');
-    })->name('write-post');
+    Route::get('/write-post', [User\PostController::class, 'create'])
+        ->name('write-post');
 
     Route::post('/write-post', function (Request $request) {
         $request->validate([
