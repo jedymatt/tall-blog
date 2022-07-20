@@ -8,7 +8,9 @@ use Livewire\Component;
 class TogglePublishButton extends Component
 {
     public Post $post;
+
     public string $buttonText = 'Publish';
+
     public string $buttonTextFallback = 'Unpublish';
 
     public function mount(Post $post)

@@ -14,7 +14,6 @@ class UpdatePersonalInformation extends Component
         $this->user = auth()->user()->toArray();
     }
 
-
     public function render()
     {
         return view('livewire.user.profile.update-personal-information');

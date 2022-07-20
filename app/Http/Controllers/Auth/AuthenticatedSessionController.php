@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class AuthenticatedSessionController extends Controller
 {
-
     public function create()
     {
         return view('auth.login');
@@ -19,7 +18,6 @@ class AuthenticatedSessionController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (auth()->attempt($credentials, $request->boolean('remember'))) {
-
             $request->session()->regenerate();
 
             return redirect()->route('home');

@@ -32,6 +32,7 @@ class PostFactory extends Factory
     {
         return $this->state(function ($attributes) {
             dd($attributes);
+
             return [
                 'published_at' => null,
             ];

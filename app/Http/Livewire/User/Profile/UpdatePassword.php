@@ -8,7 +8,9 @@ use Livewire\Component;
 class UpdatePassword extends Component
 {
     public $current_password;
+
     public $password;
+
     public $password_confirmation;
 
     public function render()
@@ -18,16 +20,14 @@ class UpdatePassword extends Component
 
     public function update()
     {
-
         $this->validate([
             'current_password' => 'required',
             'password' => 'required|confirmed',
         ]);
 
-
-
-        if (!Hash::check($this->current_password, auth()->user()->password)) {
+        if (! Hash::check($this->current_password, auth()->user()->password)) {
             $this->emit('passwordError');
+
             return;
         }
 

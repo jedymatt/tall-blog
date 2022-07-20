@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +22,5 @@ Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post.show', compact('post'));
 })->name('post.show');
 
-require __DIR__ . '/auth.php';
-require __DIR__ . '/user.php';
+require __DIR__.'/auth.php';
+require __DIR__.'/user.php';

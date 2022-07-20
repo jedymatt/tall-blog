@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -61,6 +60,5 @@ class Post extends Model
         return $this->published_at > now()->subWeek()
             ? $this->published_at->diffForHumans()
             : $this->published_at->format('M d, Y');
-
     }
 }

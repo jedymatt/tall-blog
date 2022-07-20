@@ -27,7 +27,7 @@ class PostService
         $post = Post::where('slug', $slug)->first();
 
         if ($post) {
-            $slug = $slug . '-' . $id;
+            $slug = $slug.'-'.$id;
         }
 
         return $slug;
