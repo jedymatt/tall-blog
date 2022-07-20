@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
@@ -12,26 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/write-post', [User\PostController::class, 'create'])
         ->name('write-post');
 
-    Route::post('/write-post', function (Request $request) {
-        $request->validate([
-            'title' => 'required|string',
-            'body' => 'required|string',
-        ]);
-
-        $post = Post::create([
-            'user_id' => auth()->user()->id,
-            'title' => $request->title,
-            'body' => $request->body,
-        ]);
-
-        $slug = PostService::generateSlug($post->id, $post->title);
-
-        $post->update([
-            'slug' => $slug,
-        ]);
-
-        return redirect()->route('my-posts.edit', $post);
-    });
+    Route::post('/write-post', [User\PostController::class, 'store']);
 
     Route::get('/my-posts/{post:slug}/edit', function (Post $post) {
         return view('user-post.edit', compact('post'));
