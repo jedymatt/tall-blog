@@ -10,8 +10,10 @@
                     <p class="mt-4 line-clamp-2 text-gray-800">
                         {{ $post->body }}
                     </p>
+                    <!-- Action Buttons -->
                     <div class="mt-4 flex flex-row gap-4 justify-end">
-                        <x-button outline href="{{ route('post.show', $post) }}">
+                        <!-- View -->
+                        <x-button outline href="{{ route('posts.show', $post) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -22,7 +24,8 @@
                             View
                         </x-button>
                         @livewire('toggle-publish-button', ['post' => $post])
-                        <x-button href="{{ route('my-posts.edit', $post) }}">
+                        <!-- Edit -->
+                        <x-button href="{{ route('user.posts.edit', $post) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path
@@ -30,6 +33,7 @@
                             </svg>
                             Edit
                         </x-button>
+                        <!-- Delete -->
                         <x-button danger>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">

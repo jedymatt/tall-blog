@@ -15,12 +15,12 @@ class PostController extends Controller
             ->latest()
             ->paginate();
 
-        return view('user-post.index', compact('posts'));
+        return view('user.posts.index', compact('posts'));
     }
 
     public function create()
     {
-        return view('user-post.create');
+        return view('user.posts.create');
     }
 
     public function store(Request $request, PostService $postService)
@@ -32,6 +32,26 @@ class PostController extends Controller
 
         $post = $postService->createDraft($request->title, $request->body);
 
-        return redirect()->route('my-posts.edit', $post);
+        return redirect()->route('user.posts.edit', $post);
+    }
+
+    public function edit(Post $post)
+    {
+        return view('user.posts.edit', compact('post'));
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('user.posts.edit', $post);
     }
 }

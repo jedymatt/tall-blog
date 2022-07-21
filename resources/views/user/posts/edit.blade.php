@@ -1,7 +1,8 @@
 <x-app-layout>
     <div class="px-4 py-6">
-        <form method="POST" action="{{ route('write-post') }}">
+        <form method="POST" action="{{ route('user.posts.update', $post) }}">
             @csrf
+            @method('put')
             @if ($errors->any())
                 <div>
                     @foreach ($errors->all() as $error)
@@ -14,9 +15,9 @@
             <div class="flex items-center justify-between">
                 <h1 class="text-3xl font-semibold">Write a Post</h1>
                 <div class="flex flex-row gap-4 items-baseline">
-                    <x-button disabled>
-                        Publish
-                    </x-button>
+                    @if ($post->isDrafted())
+                        @livewire('toggle-publish-button', ['post' => $post, 'buttonText' => 'Publish', 'buttonTextFallback' => 'Unpublish'])
+                    @endif
                     <x-button>
                         Save Post
                     </x-button>
@@ -24,9 +25,9 @@
             </div>
             <textarea
                 class="mt-4 resize-y w-full text-3xl font-bold border-transparent focus:border-transparent focus:ring-transparent placeholder:text-gray-400"
-                name="title" placeholder="Title" rows="1"></textarea>
+                name="title" placeholder="Title" rows="1">{{ old('title', $post->title) }}</textarea>
             <div class="mt-4">
-                <textarea id="editor" name="body" style="display: none;" placeholder="Content here...">{{ old('body') }}</textarea>
+                <textarea id="editor" name="body" style="display: none;" placeholder="Content here...">{{ old('body', $post->body) }}</textarea>
             </div>
         </form>
     </div>

@@ -2,12 +2,12 @@
 
 <article class="p-4 border rounded-md w-full max-w-2xl transition hover:shadow-md">
     <h1 class="text-4xl font-black hover:text-indigo-700">
-        <a href="{{ route('post.show', $post) }}">
+        <a href="{{ route('posts.show', $post) }}">
             {{ $post->title }}
         </a>
     </h1>
     <p class="mt-4 text-gray-600 line-clamp-2">
-        <a href="{{ route('post.show', $post) }}">
+        <a href="{{ route('posts.show', $post) }}">
             {{ $post->body }}
         </a>
     </p>

@@ -3,8 +3,8 @@
         <a href="/" class="text-xl font-bold">{{ config('app.name') }}</a>
         <div class="ml-auto inline-flex flex-row items-center">
             @auth
-                @if (!request()->routeIs('write-post'))
-                    <x-button outline class="mr-2" href="{{ route('write-post') }}">
+                @if (!request()->routeIs('user.posts.create'))
+                    <x-button outline class="mr-2" href="{{ route('user.posts.create') }}">
                         Write Post
                     </x-button>
                 @endif
@@ -39,7 +39,7 @@
                         </a>
 
                         {{-- My Posts Link --}}
-                        <a href="{{ route('my-posts') }}" class="block p-2 hover:bg-gray-100">My Posts</a>
+                        <a href="{{ route('user.posts.index') }}" class="block p-2 hover:bg-gray-100">My Posts</a>
 
                         {{-- Logout Link --}}
                         <form action="{{ route('logout') }}" method="post">
