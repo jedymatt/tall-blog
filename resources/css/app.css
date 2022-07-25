@@ -1,4 +1,5 @@
 @import "easymde/dist/easymde.min.css";
+@import "sweetalert2/dist/sweetalert2.css";
 
 @tailwind base;
 @tailwind components;
