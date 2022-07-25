@@ -11,7 +11,7 @@
                         {{ $post->body }}
                     </p>
                     <!-- Action Buttons -->
-                    <div class="mt-4 flex flex-row gap-4 justify-end">
+                    <div x-data class="mt-4 flex flex-row gap-4 justify-end">
                         <!-- View -->
                         <x-button outline href="{{ route('posts.show', $post) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
@@ -34,7 +34,8 @@
                             Edit
                         </x-button>
                         <!-- Delete -->
-                        <x-button danger>
+                        <x-button danger x-data=""
+                            x-on:click="$dispatch('deletePost', { postId: {{ $post->id }}})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -48,4 +49,40 @@
             @endforeach
         </div>
     </div>
+    @push('scripts')
+        <script>
+            window.addEventListener('deletePost', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        dispatchEvent(new Event('confirmedDeletePost', {
+                            detail: {
+                                postId: e.detail.postId
+                            }
+                        }));
+                    }
+                })
+            });
+            window.addEventListener('confirmedDeletePost', function(e) {
+                e.preventDefault();
+
+                // delete post using form
+                const form = document.createElement('form');
+                form.method = 'POST';
+                // set form.action from laravel route
+                form.action = '{{ route('user.posts.destroy', 1) }}';
+
+                // submit form
+                form.submit();
+            });
+        </script>
+    @endpush
 </x-app-layout>

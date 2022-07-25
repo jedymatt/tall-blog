@@ -54,4 +54,11 @@ class PostController extends Controller
 
         return redirect()->route('user.posts.edit', $post);
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('user.posts.index');
+    }
 }
