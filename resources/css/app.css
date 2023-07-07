@@ -9,4 +9,20 @@
     .form-input {
         @apply rounded-md focus:ring focus:ring-indigo-200/50 border-gray-200 w-full;
     }
+
+    :root {
+        --main-color: #4a76a8;
+    }
+
+    .bg-main-color {
+        background-color: var(--main-color);
+    }
+
+    .text-main-color {
+        color: var(--main-color);
+    }
+
+    .border-main-color {
+        border-color: var(--main-color);
+    }
 }
