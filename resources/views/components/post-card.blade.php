@@ -22,7 +22,7 @@
             </div>
             <div class="flex flex-col gap">
                 <div class="text-sm font-semibold hover:text-indigo-700">
-                    <a href="#">{{ $post->user->name }}</a>
+                    <a href="{{ route('authors.show', $post->user->username) }}">{{ $post->user->name }}</a>
                 </div>
                 <div>
                     <span class="text-sm italic text-gray-600">
